@@ -69,7 +69,7 @@
       background-size: 24px 24px;
     }
 
-    /* Multi-layered Card Glow */
+    /* Card Surfaces */
     .violet-card {
       background: rgba(20, 13, 49, 0.75);
       border: 1px solid rgba(167, 139, 250, 0.18);
@@ -80,6 +80,22 @@
       border-color: rgba(167, 139, 250, 0.45);
       box-shadow: 0 16px 32px -8px rgba(124, 58, 237, 0.18);
     }
+
+    /* Compact Offerings Card */
+    .compact-offering-card {
+      background: rgba(20, 13, 49, 0.85);
+      border: 1px solid rgba(167, 139, 250, 0.2);
+      backdrop-filter: blur(16px);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .compact-offering-card:hover {
+      border-color: rgba(245, 158, 11, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px -8px rgba(124, 58, 237, 0.25);
+    }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
     @keyframes pulse-slow {
       0%, 100% { opacity: 1; transform: scale(1); }
@@ -115,8 +131,8 @@
 
       <!-- Desktop Links -->
       <nav class="hidden md:flex items-center gap-8 lg:gap-9 text-sm font-semibold text-purple-200">
-        <a href="#about" class="hover:text-white transition-colors">About</a>
         <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#about" class="hover:text-white transition-colors">About</a>
         <a href="#work" class="hover:text-white transition-colors">Work</a>
         <a href="#process" class="hover:text-white transition-colors">Process</a>
         <a href="#contact" class="hover:text-white transition-colors">Contact</a>
@@ -147,15 +163,15 @@
 
     <!-- Mobile Dropdown -->
     <div id="mobileMenu" class="hidden md:hidden bg-[#0c071e]/98 border-b border-purple-500/20 px-5 pt-2 pb-6 space-y-2 shadow-2xl">
-      <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-sm text-purple-200 hover:text-white font-semibold border-b border-purple-900/30">About</a>
       <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-sm text-purple-200 hover:text-white font-semibold border-b border-purple-900/30">Services</a>
+      <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-sm text-purple-200 hover:text-white font-semibold border-b border-purple-900/30">About</a>
       <a href="#work" onclick="toggleMobileMenu()" class="block py-2 text-sm text-purple-200 hover:text-white font-semibold border-b border-purple-900/30">Work</a>
       <a href="#process" onclick="toggleMobileMenu()" class="block py-2 text-sm text-purple-200 hover:text-white font-semibold border-b border-purple-900/30">Process</a>
       <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-sm text-purple-200 hover:text-white font-semibold">Contact</a>
       <div class="pt-3 border-t border-purple-900/50 flex flex-col gap-2">
         <button onclick="openWhatsApp()" class="w-full py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold flex items-center justify-center gap-2">
           <i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i>
-          <span>WhatsApp Edwin</span>
+          <span>WhatsApp Us</span>
         </button>
         <a href="#contact" onclick="toggleMobileMenu()" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-xs font-black text-center shadow-lg">
           Let's Talk
@@ -165,17 +181,17 @@
   </header>
 
   <!-- ======================================================= -->
-  <!-- 2. HERO SECTION                                         -->
+  <!-- 2. TOP SECTION: HERO & ABOUT COMBINED (ID="ABOUT")       -->
   <!-- ======================================================= -->
-  <section class="relative pt-24 pb-14 sm:pt-36 sm:pb-24 md:pt-44 md:pb-32 overflow-hidden violet-grid">
+  <section id="about" class="relative pt-24 pb-14 sm:pt-36 sm:pb-24 md:pt-44 md:pb-32 overflow-hidden violet-grid">
     <!-- Ambient Lights -->
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[650px] h-[320px] sm:h-[420px] bg-purple-600/18 blur-[100px] sm:blur-[140px] rounded-full pointer-events-none -z-10"></div>
     <div class="absolute top-1/3 right-5 sm:right-10 w-[200px] sm:w-[350px] h-[200px] sm:h-[350px] bg-amber-500/10 blur-[90px] sm:blur-[130px] rounded-full pointer-events-none -z-10"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         <!-- Left Content -->
-        <div class="lg:col-span-7 space-y-5 sm:space-y-7 text-left">
+        <div class="lg:col-span-6 space-y-5 sm:space-y-6 text-left">
           <!-- Venture Badge -->
           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-950/70 border border-purple-500/30 text-[11px] sm:text-xs font-semibold text-purple-200">
             <span class="w-2 h-2 rounded-full bg-amber-400 pulse-dot"></span>
@@ -192,12 +208,17 @@
             </span>
           </h1>
 
-          <!-- Supporting Text -->
-          <p class="text-sm sm:text-base md:text-lg text-purple-200/90 max-w-xl leading-relaxed font-normal">
-            We build modern websites, web applications, and AI-powered digital solutions that help businesses grow, automate, and work smarter. Led by Edwin Paul & Swathy Joy.
-          </p>
+          <!-- Updated Description -->
+          <div class="space-y-3 sm:space-y-4 text-sm sm:text-base text-purple-200/90 leading-relaxed font-normal">
+            <p>
+              At <strong>Ezrah Innovations</strong>, founded by <strong>Edwin Paul</strong> and <strong>Swathy Joy</strong>, we help businesses transform their ideas and everyday processes into modern, easy-to-use digital solutions.
+            </p>
+            <p>
+              From professional business websites to complete custom web applications, we focus on creating solutions that are beautiful, practical, fast and scalable.
+            </p>
+          </div>
 
-          <!-- Buttons -->
+          <!-- Action Buttons -->
           <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
             <a href="#work" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm transition-all shadow-xl shadow-amber-500/20 text-center">
               <span>View Our Work</span>
@@ -223,168 +244,7 @@
           </div>
         </div>
 
-        <!-- Right: Business Conversion Dashboard -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md lg:max-w-none">
-            <div class="relative rounded-2xl sm:rounded-3xl bg-[#140d31]/90 border border-purple-500/30 p-4 sm:p-6 shadow-2xl shadow-purple-950/60 backdrop-blur-2xl">
-              <!-- Window top bar -->
-              <div class="flex items-center justify-between pb-3 sm:pb-4 border-b border-purple-500/20">
-                <div class="flex items-center gap-1.5">
-                  <div class="w-2.5 h-2.5 rounded-full bg-purple-900"></div>
-                  <div class="w-2.5 h-2.5 rounded-full bg-purple-900"></div>
-                  <div class="w-2.5 h-2.5 rounded-full bg-purple-900"></div>
-                </div>
-                <div class="flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-purple-950 border border-purple-500/30 text-[10px] sm:text-[11px] text-amber-300 font-semibold font-mono">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 pulse-dot"></span>
-                  <span>Live Client Solution</span>
-                </div>
-              </div>
-
-              <!-- High-Value Business Metrics -->
-              <div class="mt-4 sm:mt-5 space-y-3 sm:space-y-4">
-                <div class="grid grid-cols-2 gap-2.5 sm:gap-3">
-                  <div class="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#0c071e]/70 border border-purple-500/20">
-                    <div class="text-[10px] sm:text-[11px] text-purple-300 font-medium">Inquiries</div>
-                    <div class="text-lg sm:text-xl font-extrabold text-white mt-0.5">+40% Growth</div>
-                    <div class="text-[9px] sm:text-[10px] text-emerald-400 font-bold mt-0.5">Automated Capture</div>
-                  </div>
-                  <div class="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#0c071e]/70 border border-purple-500/20">
-                    <div class="text-[10px] sm:text-[11px] text-purple-300 font-medium">Mobile Score</div>
-                    <div class="text-lg sm:text-xl font-extrabold text-white mt-0.5">100 / 100</div>
-                    <div class="text-[9px] sm:text-[10px] text-amber-400 font-bold mt-0.5">Zero Loading Loss</div>
-                  </div>
-                </div>
-
-                <!-- Live Client Conversion Feed -->
-                <div class="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#0c071e]/70 border border-purple-500/20 space-y-2.5 sm:space-y-3">
-                  <div class="flex items-center justify-between text-xs pb-0.5">
-                    <span class="font-bold text-white text-[11px] sm:text-xs">Live Customer Activity</span>
-                    <span class="text-[9px] sm:text-[10px] text-purple-400 font-medium">Auto-pilot routing</span>
-                  </div>
-
-                  <!-- Notification 1 -->
-                  <div class="flex items-start gap-2.5 sm:gap-3 p-2.5 sm:p-3 rounded-xl bg-[#1d1248]/60 border border-purple-500/25">
-                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                      <i data-lucide="message-square" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <div class="text-[11px] sm:text-xs font-bold text-white truncate">New WhatsApp Inquiry</div>
-                      <div class="text-[10px] sm:text-[11px] text-purple-300 truncate">"Need a website redesign..."</div>
-                    </div>
-                    <span class="text-[9px] sm:text-[10px] text-emerald-400 font-semibold shrink-0">Instant</span>
-                  </div>
-
-                  <!-- Notification 2 -->
-                  <div class="flex items-start gap-2.5 sm:gap-3 p-2.5 sm:p-3 rounded-xl bg-[#1d1248]/60 border border-purple-500/25">
-                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
-                      <i data-lucide="calendar-check" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                      <div class="text-[11px] sm:text-xs font-bold text-white truncate">Consultation Booked</div>
-                      <div class="text-[10px] sm:text-[11px] text-purple-300 truncate">Automatic confirmation sent</div>
-                    </div>
-                    <span class="text-[9px] sm:text-[10px] text-amber-400 font-semibold shrink-0">Synced</span>
-                  </div>
-                </div>
-
-                <!-- Bottom Turnaround Guarantee -->
-                <div class="flex items-center justify-between p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#1d1248]/80 border border-purple-500/30">
-                  <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-black shrink-0">
-                      <i data-lucide="clock" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-                    </div>
-                    <div class="min-w-0">
-                      <div class="text-[11px] sm:text-xs font-bold text-white">7–14 Day Turnaround</div>
-                      <div class="text-[10px] sm:text-[11px] text-purple-300 truncate">Direct with Edwin & Swathy</div>
-                    </div>
-                  </div>
-                  <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-purple-950 text-[9px] sm:text-[10px] font-bold text-amber-300 border border-amber-400/20 shrink-0">Guaranteed</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================= -->
-  <!-- 3. TRUST STRIP                                          -->
-  <!-- ======================================================= -->
-  <section class="border-y border-purple-500/20 bg-[#100a28]/60 py-10 sm:py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-7 sm:mb-9">
-        <p class="text-[10px] sm:text-xs uppercase tracking-widest text-amber-400 font-bold">Credibility & Standards</p>
-        <h2 class="text-lg sm:text-xl md:text-2xl font-black text-white mt-1">Digital solutions built around your business.</h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
-        <div class="p-4 sm:p-5 rounded-2xl violet-card">
-          <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-2.5 sm:mb-3">
-            <i data-lucide="layout" class="w-4 h-4"></i>
-          </div>
-          <h3 class="text-sm font-bold text-white mb-1">Modern Design</h3>
-          <p class="text-xs text-purple-200/90 leading-relaxed">Minimalist, world-class interfaces engineered to convert.</p>
-        </div>
-
-        <div class="p-4 sm:p-5 rounded-2xl violet-card">
-          <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-amber-400 mb-2.5 sm:mb-3">
-            <i data-lucide="smartphone" class="w-4 h-4"></i>
-          </div>
-          <h3 class="text-sm font-bold text-white mb-1">Responsive Experience</h3>
-          <p class="text-xs text-purple-200/90 leading-relaxed">Pixel-perfect rendering optimized for smartphone WhatsApp visitors.</p>
-        </div>
-
-        <div class="p-4 sm:p-5 rounded-2xl violet-card">
-          <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-2.5 sm:mb-3">
-            <i data-lucide="database" class="w-4 h-4"></i>
-          </div>
-          <h3 class="text-sm font-bold text-white mb-1">Scalable Technology</h3>
-          <p class="text-xs text-purple-200/90 leading-relaxed">Clean, modular code built to adapt as your business expands.</p>
-        </div>
-
-        <div class="p-4 sm:p-5 rounded-2xl violet-card">
-          <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-amber-400 mb-2.5 sm:mb-3">
-            <i data-lucide="user-check" class="w-4 h-4"></i>
-          </div>
-          <h3 class="text-sm font-bold text-white mb-1">Direct Collaboration</h3>
-          <p class="text-xs text-purple-200/90 leading-relaxed">Direct communication with Edwin & Swathy — zero middlemen.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================================================= -->
-  <!-- 4. ABOUT SECTION                                        -->
-  <!-- ======================================================= -->
-  <section id="about" class="py-16 sm:py-24 md:py-28 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        <!-- Text -->
-        <div class="lg:col-span-6 space-y-5 sm:space-y-6">
-          <div class="inline-block px-3 py-1 rounded-md bg-purple-950/80 border border-purple-500/30 text-[11px] sm:text-xs font-bold text-amber-400 uppercase tracking-wider">
-            About Ezrah Innovations
-          </div>
-          <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-snug">
-            Turning ideas into digital products.
-          </h2>
-          <div class="space-y-3 sm:space-y-4 text-purple-200/90 leading-relaxed text-sm sm:text-base font-normal">
-            <p>
-              At <strong>Ezrah Innovations</strong>, founded by <strong>Edwin Paul</strong> and <strong>Swathy Joy</strong>, we help businesses transform their ideas and everyday processes into modern, easy-to-use digital solutions.
-            </p>
-            <p>
-              From professional business websites to complete custom web applications, we focus on creating solutions that are beautiful, practical, fast and scalable.
-            </p>
-          </div>
-          <div class="pt-2">
-            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs transition-all shadow-lg shadow-amber-500/20">
-              <span>Let's Discuss Your Idea</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Pipeline visual -->
+        <!-- Right: Product Pipeline Visual (Transferred from below) -->
         <div class="lg:col-span-6">
           <div class="rounded-2xl sm:rounded-3xl bg-[#140d31]/80 border border-purple-500/30 p-5 sm:p-7 md:p-9 shadow-2xl">
             <div class="flex items-center justify-between pb-4 sm:pb-5 border-b border-purple-500/20">
@@ -431,128 +291,306 @@
   </section>
 
   <!-- ======================================================= -->
-  <!-- 5. SERVICES SECTION                                     -->
+  <!-- 3. SERVICES SECTION: WHAT WE BUILD (CORE CAPABILITIES)  -->
   <!-- ======================================================= -->
-  <section id="services" class="py-16 sm:py-24 md:py-28 bg-[#100a28]/60 border-t border-purple-500/20">
+  <section id="services" class="py-14 sm:py-20 md:py-24 violet-grid relative overflow-hidden">
+    <!-- Ambient glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[300px] bg-purple-600/12 blur-[130px] rounded-full pointer-events-none -z-10"></div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-18 space-y-2 sm:space-y-3">
-        <div class="inline-block px-3 py-1 rounded-md bg-purple-950/80 border border-purple-500/30 text-[11px] sm:text-xs font-bold text-amber-400 uppercase tracking-wider">
-          What We Build
+      
+      <!-- Section Header with Arrows -->
+      <div class="flex items-end justify-between mb-8 sm:mb-10">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-950/80 border border-purple-500/30 text-[11px] font-bold text-amber-400 uppercase tracking-wider mb-2">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Our Core Capabilities</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
+            WHAT WE BUILD
+          </h2>
+          <p class="text-xs sm:text-sm text-purple-200/80 mt-0.5">
+            Explore our core digital solutions designed around your business.
+          </p>
         </div>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">Our Core Services</h2>
-        <p class="text-xs sm:text-sm md:text-base text-purple-200/80 leading-relaxed">
-          From your first idea to a complete digital product, Ezrah Innovations creates solutions designed around your business.
-        </p>
+
+        <!-- Slider Navigation Controls -->
+        <div class="flex items-center gap-2">
+          <button onclick="scrollSlider(-1)" aria-label="Previous offering" class="p-2.5 rounded-xl bg-[#140d31] hover:bg-purple-900 border border-purple-500/30 text-purple-200 hover:text-white transition-all cursor-pointer shadow-md active:scale-95">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          </button>
+          <button onclick="scrollSlider(1)" aria-label="Next offering" class="p-2.5 rounded-xl bg-[#140d31] hover:bg-purple-900 border border-purple-500/30 text-purple-200 hover:text-white transition-all cursor-pointer shadow-md active:scale-95">
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        <!-- 1 -->
-        <div class="violet-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-amber-400 mb-4 sm:mb-6">
-              <i data-lucide="globe" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-            </div>
-            <h3 class="text-base sm:text-lg font-bold text-white mb-2">Business Websites</h3>
-            <p class="text-xs sm:text-sm text-purple-200/90 leading-relaxed mb-4 sm:mb-6">
-              Modern, responsive websites designed to establish your brand online and turn visitors into customers.
-            </p>
+      <!-- Horizontal Compact Card Track -->
+      <div id="slider-track" class="flex gap-4 sm:gap-5 overflow-x-auto no-scrollbar scroll-smooth pb-3 -mx-4 px-4 sm:mx-0 sm:px-0">
+
+        <!-- 01: Business Websites -->
+        <div class="compact-offering-card rounded-2xl p-4 sm:p-5 w-[275px] sm:w-[330px] shrink-0 flex flex-col justify-between space-y-3.5 cursor-pointer group" onclick="openWhatsAppWithMessage('Hi Edwin & Swathy, I am interested in building a Business Website.')">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-amber-400 bg-purple-950 px-2.5 py-0.5 rounded-full border border-purple-500/30">01</span>
+            <span class="text-[10px] font-mono text-purple-400 uppercase font-semibold">Web Presence</span>
           </div>
-          <div class="pt-3 border-t border-purple-500/20 text-[10px] sm:text-[11px] text-purple-300 font-semibold flex flex-wrap gap-1.5">
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">Landing Pages</span>
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">Corporate Sites</span>
+
+          <!-- Visual Thumbnail -->
+          <div class="h-32 sm:h-36 rounded-xl bg-[#0c071e] border border-purple-500/20 p-3 flex flex-col justify-between overflow-hidden group-hover:border-purple-400/40 transition-colors">
+            <div class="flex items-center justify-between pb-1.5 border-b border-purple-500/20 text-[10px] text-purple-400">
+              <span class="font-mono flex items-center gap-1"><i data-lucide="globe" class="w-3 h-3 text-amber-400"></i> brand.com</span>
+              <span class="text-emerald-400 font-bold">100/100</span>
+            </div>
+            <div class="p-2.5 rounded-lg bg-[#1d1248]/80 border border-purple-500/30 text-center">
+              <div class="text-[10px] text-amber-300 font-bold">Luxury Studio Showcase</div>
+              <div class="text-[9px] text-purple-300 mt-0.5">Direct WhatsApp Lead Routing</div>
+            </div>
+            <div class="text-[9px] text-center text-purple-400 font-mono">Mobile-First UI</div>
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <h3 class="text-sm sm:text-base font-black text-white group-hover:text-amber-400 transition-colors">
+              Business Websites
+            </h3>
+            <span class="text-xs font-bold text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Explore</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
           </div>
         </div>
 
-        <!-- 2 -->
-        <div class="violet-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4 sm:mb-6">
-              <i data-lucide="layers" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-            </div>
-            <h3 class="text-base sm:text-lg font-bold text-white mb-2">Web Applications</h3>
-            <p class="text-xs sm:text-sm text-purple-200/90 leading-relaxed mb-4 sm:mb-6">
-              Custom web applications designed around your unique business processes and requirements.
-            </p>
+        <!-- 02: Web Applications -->
+        <div class="compact-offering-card rounded-2xl p-4 sm:p-5 w-[275px] sm:w-[330px] shrink-0 flex flex-col justify-between space-y-3.5 cursor-pointer group" onclick="openWhatsAppWithMessage('Hi Edwin & Swathy, I would like to discuss building a custom Web Application.')">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-amber-400 bg-purple-950 px-2.5 py-0.5 rounded-full border border-purple-500/30">02</span>
+            <span class="text-[10px] font-mono text-purple-400 uppercase font-semibold">Custom SaaS</span>
           </div>
-          <div class="pt-3 border-t border-purple-500/20 text-[10px] sm:text-[11px] text-purple-300 font-semibold flex flex-wrap gap-1.5">
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">Client Portals</span>
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">SaaS MVPs</span>
+
+          <!-- Visual Thumbnail -->
+          <div class="h-32 sm:h-36 rounded-xl bg-[#0c071e] border border-purple-500/20 p-3 flex flex-col justify-between overflow-hidden group-hover:border-purple-400/40 transition-colors">
+            <div class="flex items-center justify-between pb-1.5 border-b border-purple-500/20 text-[10px] text-purple-400">
+              <span class="font-mono flex items-center gap-1"><i data-lucide="layers" class="w-3 h-3 text-purple-400"></i> app.portal/os</span>
+              <span class="text-amber-300 font-bold">Admin</span>
+            </div>
+            <div class="space-y-1 font-mono text-[9px]">
+              <div class="p-1.5 bg-[#140d31] rounded flex justify-between text-purple-200">
+                <span>Member Directory</span>
+                <span class="text-emerald-400">Active</span>
+              </div>
+              <div class="p-1.5 bg-[#140d31] rounded flex justify-between text-purple-200">
+                <span>Access Security</span>
+                <span class="text-amber-300">Role-Based</span>
+              </div>
+            </div>
+            <div class="text-[9px] text-center text-purple-400 font-mono">Postgres Cloud Sync</div>
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <h3 class="text-sm sm:text-base font-black text-white group-hover:text-amber-400 transition-colors">
+              Web Applications
+            </h3>
+            <span class="text-xs font-bold text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Explore</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
           </div>
         </div>
 
-        <!-- 3 -->
-        <div class="violet-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-amber-400 mb-4 sm:mb-6">
-              <i data-lucide="sparkles" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-            </div>
-            <h3 class="text-base sm:text-lg font-bold text-white mb-2">AI Solutions</h3>
-            <p class="text-xs sm:text-sm text-purple-200/90 leading-relaxed mb-4 sm:mb-6">
-              AI-powered features that automate repetitive work, improve productivity and create smarter customer experiences.
-            </p>
+        <!-- 03: AI Solutions -->
+        <div class="compact-offering-card rounded-2xl p-4 sm:p-5 w-[275px] sm:w-[330px] shrink-0 flex flex-col justify-between space-y-3.5 cursor-pointer group" onclick="openWhatsAppWithMessage('Hi Edwin & Swathy, I am interested in AI Solutions.')">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-amber-400 bg-purple-950 px-2.5 py-0.5 rounded-full border border-purple-500/30">03</span>
+            <span class="text-[10px] font-mono text-purple-400 uppercase font-semibold">Intelligent Tools</span>
           </div>
-          <div class="pt-3 border-t border-purple-500/20 text-[10px] sm:text-[11px] text-purple-300 font-semibold flex flex-wrap gap-1.5">
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">Smart Chatbots</span>
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">LLM Workflows</span>
+
+          <!-- Visual Thumbnail -->
+          <div class="h-32 sm:h-36 rounded-xl bg-[#0c071e] border border-purple-500/20 p-3 flex flex-col justify-between overflow-hidden group-hover:border-purple-400/40 transition-colors">
+            <div class="flex items-center justify-between pb-1.5 border-b border-purple-500/20 text-[10px] text-purple-400">
+              <span class="font-mono flex items-center gap-1"><i data-lucide="bot" class="w-3 h-3 text-amber-400"></i> AI Copilot</span>
+              <span class="text-emerald-400 font-bold">118ms</span>
+            </div>
+            <div class="p-2 bg-[#1d1248] rounded-lg border border-amber-400/30 text-[10px] text-white">
+              <span class="text-amber-300 font-mono font-bold block">Autonomous Agent:</span>
+              Inquiry auto-parsed & WhatsApp alert sent.
+            </div>
+            <div class="text-[9px] text-center text-purple-400 font-mono">LLM Streaming Pipeline</div>
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <h3 class="text-sm sm:text-base font-black text-white group-hover:text-amber-400 transition-colors">
+              AI Solutions
+            </h3>
+            <span class="text-xs font-bold text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Explore</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
           </div>
         </div>
 
-        <!-- 4 -->
-        <div class="violet-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4 sm:mb-6">
-              <i data-lucide="bar-chart-3" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-            </div>
-            <h3 class="text-base sm:text-lg font-bold text-white mb-2">Business Dashboards</h3>
-            <p class="text-xs sm:text-sm text-purple-200/90 leading-relaxed mb-4 sm:mb-6">
-              Clean, intuitive dashboards that turn business data into useful insights and actions.
-            </p>
+        <!-- 04: Business Dashboards -->
+        <div class="compact-offering-card rounded-2xl p-4 sm:p-5 w-[275px] sm:w-[330px] shrink-0 flex flex-col justify-between space-y-3.5 cursor-pointer group" onclick="openWhatsAppWithMessage('Hi Edwin & Swathy, I would like to discuss building a Business Dashboard.')">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-amber-400 bg-purple-950 px-2.5 py-0.5 rounded-full border border-purple-500/30">04</span>
+            <span class="text-[10px] font-mono text-purple-400 uppercase font-semibold">Analytics</span>
           </div>
-          <div class="pt-3 border-t border-purple-500/20 text-[10px] sm:text-[11px] text-purple-300 font-semibold flex flex-wrap gap-1.5">
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">KPI Tracking</span>
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">Real-time Data</span>
+
+          <!-- Visual Thumbnail -->
+          <div class="h-32 sm:h-36 rounded-xl bg-[#0c071e] border border-purple-500/20 p-3 flex flex-col justify-between overflow-hidden group-hover:border-purple-400/40 transition-colors">
+            <div class="flex items-center justify-between pb-1.5 border-b border-purple-500/20 text-[10px] text-purple-400">
+              <span class="font-mono flex items-center gap-1"><i data-lucide="bar-chart-2" class="w-3 h-3 text-purple-400"></i> Telemetry</span>
+              <span class="text-emerald-400 font-bold">+38% Inquiries</span>
+            </div>
+            <div class="flex items-end justify-between h-14 px-2 pt-2">
+              <div class="w-3 bg-purple-900 rounded-t h-4"></div>
+              <div class="w-3 bg-purple-800 rounded-t h-6"></div>
+              <div class="w-3 bg-purple-700 rounded-t h-8"></div>
+              <div class="w-3 bg-purple-600 rounded-t h-10"></div>
+              <div class="w-3 bg-amber-400 rounded-t h-12"></div>
+              <div class="w-3 bg-emerald-400 rounded-t h-14"></div>
+            </div>
+            <div class="text-[9px] text-center text-purple-400 font-mono">Live Business Metrics</div>
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <h3 class="text-sm sm:text-base font-black text-white group-hover:text-amber-400 transition-colors">
+              Business Dashboards
+            </h3>
+            <span class="text-xs font-bold text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Explore</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
           </div>
         </div>
 
-        <!-- 5 -->
-        <div class="violet-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-amber-400 mb-4 sm:mb-6">
-              <i data-lucide="shopping-cart" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-            </div>
-            <h3 class="text-base sm:text-lg font-bold text-white mb-2">E-commerce</h3>
-            <p class="text-xs sm:text-sm text-purple-200/90 leading-relaxed mb-4 sm:mb-6">
-              Modern online stores designed to make selling products simple, engaging and scalable.
-            </p>
+        <!-- 05: E-Commerce -->
+        <div class="compact-offering-card rounded-2xl p-4 sm:p-5 w-[275px] sm:w-[330px] shrink-0 flex flex-col justify-between space-y-3.5 cursor-pointer group" onclick="openWhatsAppWithMessage('Hi Edwin & Swathy, I am interested in building an E-Commerce storefront.')">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-amber-400 bg-purple-950 px-2.5 py-0.5 rounded-full border border-purple-500/30">05</span>
+            <span class="text-[10px] font-mono text-purple-400 uppercase font-semibold">Storefront</span>
           </div>
-          <div class="pt-3 border-t border-purple-500/20 text-[10px] sm:text-[11px] text-purple-300 font-semibold flex flex-wrap gap-1.5">
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">Catalog Stores</span>
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">Payment Gateways</span>
+
+          <!-- Visual Thumbnail -->
+          <div class="h-32 sm:h-36 rounded-xl bg-[#0c071e] border border-purple-500/20 p-3 flex flex-col justify-between overflow-hidden group-hover:border-purple-400/40 transition-colors">
+            <div class="flex items-center justify-between pb-1.5 border-b border-purple-500/20 text-[10px] text-purple-400">
+              <span class="font-mono flex items-center gap-1"><i data-lucide="shopping-bag" class="w-3 h-3 text-amber-400"></i> Checkout</span>
+              <span class="text-emerald-400 font-bold">UPI / Cards</span>
+            </div>
+            <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] font-bold text-white">Product Catalog</div>
+                <div class="text-[9px] text-amber-400 font-mono">Instant Order Hook</div>
+              </div>
+              <span class="px-2 py-0.5 bg-amber-400 text-slate-950 font-black text-[9px] rounded">1-Click</span>
+            </div>
+            <div class="text-[9px] text-center text-purple-400 font-mono">Automated Invoicing</div>
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <h3 class="text-sm sm:text-base font-black text-white group-hover:text-amber-400 transition-colors">
+              E-Commerce
+            </h3>
+            <span class="text-xs font-bold text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Explore</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
           </div>
         </div>
 
-        <!-- 6 -->
-        <div class="violet-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4 sm:mb-6">
-              <i data-lucide="workflow" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+        <!-- 06: Business Automation -->
+        <div class="compact-offering-card rounded-2xl p-4 sm:p-5 w-[275px] sm:w-[330px] shrink-0 flex flex-col justify-between space-y-3.5 cursor-pointer group" onclick="openWhatsAppWithMessage('Hi Edwin & Swathy, I would like to automate our business workflows.')">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-amber-400 bg-purple-950 px-2.5 py-0.5 rounded-full border border-purple-500/30">06</span>
+            <span class="text-[10px] font-mono text-purple-400 uppercase font-semibold">Workflows</span>
+          </div>
+
+          <!-- Visual Thumbnail -->
+          <div class="h-32 sm:h-36 rounded-xl bg-[#0c071e] border border-purple-500/20 p-3 flex flex-col justify-between overflow-hidden group-hover:border-purple-400/40 transition-colors">
+            <div class="flex items-center justify-between pb-1.5 border-b border-purple-500/20 text-[10px] text-purple-400">
+              <span class="font-mono flex items-center gap-1"><i data-lucide="workflow" class="w-3 h-3 text-purple-400"></i> Auto Flow</span>
+              <span class="text-emerald-400 font-bold">Zero Delay</span>
             </div>
-            <h3 class="text-base sm:text-lg font-bold text-white mb-2">Business Automation</h3>
-            <p class="text-xs sm:text-sm text-purple-200/90 leading-relaxed mb-4 sm:mb-6">
-              Replace repetitive manual processes with smart digital workflows that save time and reduce errors.
-            </p>
+            <div class="space-y-1 font-mono text-[9px]">
+              <div class="p-1 bg-[#140d31] rounded flex justify-between text-purple-200">
+                <span>01. Web Trigger</span>
+                <span class="text-amber-400">→</span>
+              </div>
+              <div class="p-1 bg-[#1d1248] rounded border border-purple-500/30 flex justify-between text-white">
+                <span class="text-amber-300">02. WhatsApp Alert</span>
+                <span class="text-emerald-400">✓</span>
+              </div>
+            </div>
+            <div class="text-[9px] text-center text-purple-400 font-mono">CRM Auto-Sync</div>
           </div>
-          <div class="pt-3 border-t border-purple-500/20 text-[10px] sm:text-[11px] text-purple-300 font-semibold flex flex-wrap gap-1.5">
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">WhatsApp Hooks</span>
-            <span class="bg-[#0c071e] px-2.5 py-1 rounded-lg border border-purple-500/20">CRM Automation</span>
+
+          <div class="flex items-center justify-between pt-1">
+            <h3 class="text-sm sm:text-base font-black text-white group-hover:text-amber-400 transition-colors">
+              Business Automation
+            </h3>
+            <span class="text-xs font-bold text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Explore</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
           </div>
+        </div>
+
+      </div>
+
+      <!-- Mobile swipe instruction -->
+      <div class="sm:hidden text-center text-[10px] font-mono text-purple-400/70 pt-1">
+        ← Swipe cards horizontally to view all →
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- 4. TRUST STRIP: CREDIBILITY & STANDARDS                 -->
+  <!-- ======================================================= -->
+  <section class="border-y border-purple-500/20 bg-[#100a28]/60 py-10 sm:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-7 sm:mb-9">
+        <p class="text-[10px] sm:text-xs uppercase tracking-widest text-amber-400 font-bold">Credibility & Standards</p>
+        <h2 class="text-lg sm:text-xl md:text-2xl font-black text-white mt-1">Digital solutions built around your business.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
+        <div class="p-4 sm:p-5 rounded-2xl violet-card">
+          <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-2.5 sm:mb-3">
+            <i data-lucide="layout" class="w-4 h-4"></i>
+          </div>
+          <h3 class="text-sm font-bold text-white mb-1">Modern Design</h3>
+          <p class="text-xs text-purple-200/90 leading-relaxed">Minimalist, world-class interfaces engineered to convert.</p>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-2xl violet-card">
+          <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-amber-400 mb-2.5 sm:mb-3">
+            <i data-lucide="smartphone" class="w-4 h-4"></i>
+          </div>
+          <h3 class="text-sm font-bold text-white mb-1">Responsive Experience</h3>
+          <p class="text-xs text-purple-200/90 leading-relaxed">Pixel-perfect rendering optimized for smartphone WhatsApp visitors.</p>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-2xl violet-card">
+          <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-2.5 sm:mb-3">
+            <i data-lucide="database" class="w-4 h-4"></i>
+          </div>
+          <h3 class="text-sm font-bold text-white mb-1">Scalable Technology</h3>
+          <p class="text-xs text-purple-200/90 leading-relaxed">Clean, modular code built to adapt as your business expands.</p>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-2xl violet-card">
+          <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-amber-400 mb-2.5 sm:mb-3">
+            <i data-lucide="user-check" class="w-4 h-4"></i>
+          </div>
+          <h3 class="text-sm font-bold text-white mb-1">Direct Collaboration</h3>
+          <p class="text-xs text-purple-200/90 leading-relaxed">Direct communication with Edwin & Swathy — zero middlemen.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ======================================================= -->
-  <!-- 6. FEATURED WORK SECTION (BUILT WITH PURPOSE)           -->
+  <!-- 5. FEATURED WORK SECTION: APARTMENT SOLUTION            -->
   <!-- ======================================================= -->
   <section id="work" class="py-16 sm:py-24 md:py-28 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -613,7 +651,6 @@
           <!-- UI Preview Column -->
           <div class="lg:col-span-6 bg-[#0c071e]/80 p-4 sm:p-8 md:p-10 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-purple-500/20">
             <div class="w-full rounded-2xl bg-[#140d31] border border-purple-500/30 p-4 sm:p-5 space-y-3.5 shadow-xl">
-              <!-- Top bar with clean simulated domain -->
               <div class="flex justify-between items-center text-xs text-purple-300 border-b border-purple-500/20 pb-2.5">
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
@@ -622,7 +659,6 @@
                 <span class="text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded font-mono font-bold text-[9px] sm:text-[10px]">Production</span>
               </div>
 
-              <!-- Metrics (Responsive sizes) -->
               <div class="grid grid-cols-3 gap-1.5 sm:gap-2.5 text-center">
                 <div class="p-2 sm:p-3 bg-[#0c071e] rounded-xl border border-purple-500/20">
                   <div class="text-[9px] sm:text-[10px] text-purple-400 font-medium">Custom</div>
@@ -638,7 +674,6 @@
                 </div>
               </div>
 
-              <!-- Notice card sample -->
               <div class="p-3 sm:p-3.5 bg-[#0c071e] rounded-xl border border-purple-500/20 text-xs text-purple-200 space-y-1.5 sm:space-y-2">
                 <div class="flex items-center justify-between text-[9px] sm:text-[10px] text-purple-400 font-mono">
                   <span>Community Operations Feed</span>
@@ -649,7 +684,6 @@
                 </p>
               </div>
 
-              <!-- Direct link trigger -->
               <div class="pt-1 text-center">
                 <a href="https://vascon-venus-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-[10px] sm:text-[11px] text-amber-400 hover:text-amber-300 font-bold underline inline-flex items-center gap-1">
                   <span>Click here to explore the live interactive society demo</span>
@@ -664,7 +698,7 @@
   </section>
 
   <!-- ======================================================= -->
-  <!-- 7. WHY WORK WITH EZRAH INNOVATIONS                      -->
+  <!-- 6. WHY WORK WITH EZRAH INNOVATIONS                      -->
   <!-- ======================================================= -->
   <section class="py-16 sm:py-24 md:py-28 bg-[#100a28]/60 border-y border-purple-500/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -723,7 +757,7 @@
   </section>
 
   <!-- ======================================================= -->
-  <!-- 8. PROCESS SECTION                                      -->
+  <!-- 7. PROCESS SECTION                                      -->
   <!-- ======================================================= -->
   <section id="process" class="py-16 sm:py-24 md:py-28 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -781,11 +815,11 @@
           <div class="w-8 h-8 rounded-lg bg-purple-950 font-mono font-black text-xs text-amber-400 flex items-center justify-center shrink-0 border border-purple-500/30">03</div>
           <div><h3 class="text-xs sm:text-sm font-bold text-white uppercase">BUILD</h3><p class="text-xs text-purple-300/90 mt-0.5">Develop, test and refine the solution.</p></div>
         </div>
-        <div class="flex items-start gap-3.5 p-4 rounded-xl sm:rounded-2xl bg-[#140d31] border border-purple-500/30">
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-[#140d31] border border-purple-500/30 shadow-xl">
           <div class="w-8 h-8 rounded-lg bg-purple-950 font-mono font-black text-xs text-amber-400 flex items-center justify-center shrink-0 border border-purple-500/30">04</div>
           <div><h3 class="text-xs sm:text-sm font-bold text-white uppercase">LAUNCH</h3><p class="text-xs text-purple-300/90 mt-0.5">Deploy, optimize and make the product live.</p></div>
         </div>
-        <div class="flex items-start gap-3.5 p-4 rounded-xl sm:rounded-2xl bg-[#140d31] border border-purple-500/30">
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-[#140d31] border border-purple-500/30 shadow-xl">
           <div class="w-8 h-8 rounded-lg bg-purple-950 font-mono font-black text-xs text-amber-400 flex items-center justify-center shrink-0 border border-purple-500/30">05</div>
           <div><h3 class="text-xs sm:text-sm font-bold text-white uppercase">SUPPORT</h3><p class="text-xs text-purple-300/90 mt-0.5">Continue improving and supporting the solution as your business grows.</p></div>
         </div>
@@ -794,7 +828,7 @@
   </section>
 
   <!-- ======================================================= -->
-  <!-- 9. SOLUTIONS & PRICING                                  -->
+  <!-- 8. SOLUTIONS & PRICING                                  -->
   <!-- ======================================================= -->
   <section class="py-16 sm:py-24 md:py-28 bg-[#100a28]/60 border-t border-purple-500/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -902,7 +936,7 @@
   </section>
 
   <!-- ======================================================= -->
-  <!-- 10. CONVERSION CTA                                      -->
+  <!-- 9. CONVERSION CTA                                       -->
   <!-- ======================================================= -->
   <section class="py-16 sm:py-24 relative overflow-hidden bg-gradient-to-br from-[#100a28] via-[#1b1042] to-[#0c071e] text-white border-t border-purple-500/20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-6">
@@ -932,12 +966,12 @@
   </section>
 
   <!-- ======================================================= -->
-  <!-- 11. CONTACT SECTION & ENQUIRY FORM                      -->
+  <!-- 10. CONTACT SECTION & ENQUIRY FORM                      -->
   <!-- ======================================================= -->
   <section id="contact" class="py-16 sm:py-24 md:py-28 bg-[#0c071e] border-t border-purple-500/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-        <!-- Direct details (Studio Leadership Block) -->
+        <!-- Direct details (Studio Leadership Block with Email) -->
         <div class="lg:col-span-5 space-y-6 sm:space-y-8">
           <div>
             <div class="inline-block px-3 py-1 rounded-md bg-purple-950/80 border border-purple-500/30 text-[11px] sm:text-xs font-bold text-amber-400 uppercase tracking-wider mb-2.5">
@@ -957,7 +991,7 @@
               <h3 class="text-base sm:text-lg font-black text-white mt-0.5">EZRAH INNOVATIONS</h3>
             </div>
 
-            <!-- Founders Grid: Edwin Paul & Swathy Joy -->
+            <!-- Founders Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-1">
               <div class="p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#0c071e] border border-purple-500/20">
                 <div class="text-xs font-black text-white">Edwin Paul</div>
@@ -979,8 +1013,8 @@
                 <span>+91 84289 12486</span>
               </div>
               <div class="flex items-center gap-3">
-                <i data-lucide="mail" class="w-4 h-4 text-purple-400 shrink-0"></i>
-                <span id="cfgEmail">[EMAIL PLACEHOLDER]</span>
+                <i data-lucide="mail" class="w-4 h-4 text-amber-400 shrink-0"></i>
+                <a href="mailto:tftxvr@gmail.com" class="hover:text-white transition-colors">tftxvr@gmail.com</a>
               </div>
             </div>
 
@@ -999,7 +1033,7 @@
           </div>
         </div>
 
-        <!-- Form (With iOS 16px text-base fix to prevent auto-zoom) -->
+        <!-- Form -->
         <div class="lg:col-span-7">
           <div class="p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-[#140d31]/90 border border-purple-500/30 shadow-2xl">
             <h3 class="text-lg sm:text-xl font-bold text-white mb-1.5">Project Enquiry Form</h3>
@@ -1070,7 +1104,7 @@
   </section>
 
   <!-- ======================================================= -->
-  <!-- 12. QR CODE SECTION                                     -->
+  <!-- 11. QR CODE SECTION                                     -->
   <!-- ======================================================= -->
   <section class="py-14 sm:py-18 bg-[#0c071e] border-t border-purple-500/20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1122,7 +1156,7 @@
   </section>
 
   <!-- ======================================================= -->
-  <!-- 13. FOOTER                                              -->
+  <!-- 12. FOOTER                                              -->
   <!-- ======================================================= -->
   <footer class="py-10 sm:py-14 bg-[#080414] border-t border-purple-500/20 text-purple-300/70 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1140,8 +1174,8 @@
         <p class="text-purple-300 text-xs font-medium">Turning ideas into digital products.</p>
 
         <nav class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-semibold text-purple-200">
-          <a href="#about" class="hover:text-white transition-colors">About</a>
           <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#about" class="hover:text-white transition-colors">About</a>
           <a href="#work" class="hover:text-white transition-colors">Work</a>
           <a href="#process" class="hover:text-white transition-colors">Process</a>
           <a href="#contact" class="hover:text-white transition-colors">Contact</a>
@@ -1159,7 +1193,7 @@
   </footer>
 
   <!-- ======================================================= -->
-  <!-- 14. STICKY FLOATING WHATSAPP CTA                        -->
+  <!-- 13. STICKY FLOATING WHATSAPP CTA                        -->
   <!-- ======================================================= -->
   <aside class="fixed bottom-5 right-4 sm:bottom-6 sm:right-5 z-40">
     <button onclick="openWhatsApp()" class="flex items-center gap-2 px-4 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs shadow-2xl transition-all cursor-pointer">
@@ -1171,7 +1205,7 @@
   </aside>
 
   <!-- ======================================================= -->
-  <!-- 15. PROJECT DETAIL MODAL DIALOG                         -->
+  <!-- 14. PROJECT DETAIL MODAL DIALOG                         -->
   <!-- ======================================================= -->
   <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-[#0c071e]/90 backdrop-blur-xl overflow-y-auto">
     <div class="relative w-full max-w-2xl rounded-2xl sm:rounded-3xl bg-[#140d31] border border-purple-500/40 shadow-2xl p-5 sm:p-7 md:p-9 space-y-4 sm:space-y-6 my-auto text-white">
@@ -1268,7 +1302,6 @@
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById('cfgEmail').textContent = SITE_CONFIG.email;
       document.getElementById('cfgLinkedIn').href = SITE_CONFIG.linkedInUrl;
       document.getElementById('cfgGitHub').href = SITE_CONFIG.gitHubUrl;
       document.getElementById('ftLinkedIn').href = SITE_CONFIG.linkedInUrl;
@@ -1278,6 +1311,12 @@
         window.lucide.createIcons();
       }
     });
+
+    function scrollSlider(direction) {
+      const track = document.getElementById('slider-track');
+      const scrollAmount = window.innerWidth < 640 ? 290 : 350;
+      track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
 
     function openWhatsApp() {
       const url = `https://wa.me/${SITE_CONFIG.whatsAppNumber}?text=${encodeURIComponent(SITE_CONFIG.defaultWhatsAppMessage)}`;

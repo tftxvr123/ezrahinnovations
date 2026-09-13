@@ -97,8 +97,21 @@
       box-shadow: 0 16px 30px -8px rgba(124, 58, 237, 0.25);
     }
 
+    /* Catalog Project Card */
+    .catalog-project-card {
+      background: rgba(20, 13, 49, 0.8);
+      border: 1px solid rgba(167, 139, 250, 0.22);
+      backdrop-filter: blur(18px);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .catalog-project-card:hover {
+      border-color: rgba(245, 158, 11, 0.55);
+      transform: translateY(-3px);
+      box-shadow: 0 20px 38px -10px rgba(124, 58, 237, 0.28);
+    }
+
     /* ======================================================= */
-    /* NEW LIGHT THEME: BESPOKE WARM LUXURY BEIGE             */
+    /* LIGHT THEME: BESPOKE WARM LUXURY BEIGE                 */
     /* ======================================================= */
     body.theme-beige {
       background-color: #f7f4ee !important;
@@ -122,13 +135,15 @@
     body.theme-beige .text-purple-300 { color: #57534e !important; }
     body.theme-beige .text-purple-400 { color: #78716c !important; }
 
-    body.theme-beige .violet-card {
+    body.theme-beige .violet-card,
+    body.theme-beige .catalog-project-card {
       background: #ffffff !important;
       border-color: rgba(228, 221, 210, 0.9) !important;
       box-shadow: 0 10px 25px -4px rgba(41, 37, 36, 0.04), 0 4px 6px -2px rgba(41, 37, 36, 0.02) !important;
     }
-    body.theme-beige .violet-card:hover {
-      border-color: rgba(217, 119, 6, 0.4) !important;
+    body.theme-beige .violet-card:hover,
+    body.theme-beige .catalog-project-card:hover {
+      border-color: rgba(217, 119, 6, 0.5) !important;
       box-shadow: 0 20px 35px -8px rgba(41, 37, 36, 0.08) !important;
     }
     body.theme-beige .compact-offering-card {
@@ -180,9 +195,7 @@
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.45; transform: scale(0.92); }
     }
-    .pulse-dot {
-      animation: pulse-slow 2.4s infinite ease-in-out;
-    }
+    .pulse-dot { animation: pulse-slow 2.4s infinite ease-in-out; }
   </style>
 </head>
 
@@ -268,7 +281,7 @@
   </header>
 
   <!-- ======================================================= -->
-  <!-- 2. TOP SECTION: HERO & ABOUT COMBINED (ID="ABOUT")       -->
+  <!-- 2. TOP SECTION: HERO & ABOUT COMBINED                   -->
   <!-- ======================================================= -->
   <section id="about" class="relative pt-24 pb-14 sm:pt-36 sm:pb-24 md:pt-44 md:pb-32 overflow-hidden violet-grid">
     <!-- Ambient Lights -->
@@ -598,276 +611,260 @@
   </section>
 
   <!-- ======================================================= -->
-  <!-- 5. FEATURED WORK: BUILT WITH PURPOSE                    -->
+  <!-- 5. FEATURED WORK: SOLUTIONS CATALOG                     -->
   <!-- ======================================================= -->
   <section id="work" class="py-16 sm:py-24 md:py-28 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-18 space-y-2 sm:space-y-3">
         <div class="inline-block px-3 py-1 rounded-md bg-purple-950/80 border border-purple-500/30 text-[11px] sm:text-xs font-bold text-amber-400 uppercase tracking-wider">
-          Featured Solutions
+          Solutions Catalog
         </div>
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">Built with purpose.</h2>
         <p class="text-xs sm:text-sm md:text-base text-purple-200/80 leading-relaxed">
-          Proven, live digital solutions engineered for modern business operations.
+          Curated digital products engineered for operational efficiency, learning, and executive brand authority.
         </p>
       </div>
 
-      <div class="space-y-12">
-        <!-- ITEM 01: Apartment & Society Management Solution -->
-        <div class="rounded-2xl sm:rounded-3xl bg-[#140d31]/80 border border-purple-500/30 overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-2xl">
-          <div class="lg:col-span-6 p-5 sm:p-8 md:p-11 flex flex-col justify-between space-y-5 sm:space-y-6">
-            <div class="space-y-3 sm:space-y-4">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400">Residential Operations Platform</span>
-                <span class="text-purple-600">•</span>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
-                  Live Production Solution
-                </span>
+      <!-- 2x2 Scalable Executive Catalog Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        
+        <!-- CATALOG ITEM 01: Apartment & Society Management Solution -->
+        <div class="catalog-project-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400">Residential OS</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                Live Solution
+              </span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">
+              Apartment & Society Management
+            </h3>
+
+            <p class="text-purple-200/90 text-xs sm:text-sm leading-relaxed">
+              All-in-one digital operating system built for residential communities with customizable modules for any apartment complex.
+            </p>
+
+            <!-- Scaled UI Thumbnail -->
+            <div class="rounded-xl bg-[#0c071e] border border-purple-500/30 p-3.5 space-y-2.5">
+              <div class="flex justify-between items-center text-[10px] text-purple-300 border-b border-purple-500/20 pb-2">
+                <span class="font-mono text-purple-200 font-semibold">society-management.live</span>
+                <span class="text-emerald-400 font-mono">Synchronized</span>
               </div>
-              
-              <h3 class="text-xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
-                Apartment & Society Management Solution
-              </h3>
-              
-              <p class="text-purple-200/90 text-xs sm:text-sm leading-relaxed">
-                A complete digital operating system built for residential communities, featuring <strong>customizable options designed to make it an all-in-one solution for any apartment complex or gated society</strong>.
-              </p>
-              
-              <div class="space-y-2 sm:space-y-2.5 pt-1 sm:pt-2 text-xs text-purple-200/90 font-medium">
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Fully customizable architecture adaptable to any apartment structure</span></div>
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Community notices, facility bookings & maintenance ticket workflows</span></div>
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Real-time resident communication replacing scattered WhatsApp groups</span></div>
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Secure role-based administration for management committees</span></div>
+              <div class="grid grid-cols-3 gap-1.5 text-center">
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Structure</div>
+                  <div class="text-xs font-extrabold text-white mt-0.5">Customizable</div>
+                </div>
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Bookings</div>
+                  <div class="text-xs font-extrabold text-amber-400 mt-0.5">Automated</div>
+                </div>
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Tickets</div>
+                  <div class="text-xs font-extrabold text-emerald-400 mt-0.5">Zero Paper</div>
+                </div>
               </div>
             </div>
 
-            <div class="pt-4 sm:pt-6 border-t border-purple-500/20 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <a href="https://vascon-venus-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-xs font-black hover:from-amber-300 hover:to-amber-400 transition-all shadow-lg shadow-amber-500/20 text-center">
-                <span>View Live System Demo</span>
-                <i data-lucide="external-link" class="w-4 h-4"></i>
-              </a>
-
-              <button onclick="openProjectModal('apartment-solution')" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#0c071e] text-purple-200 border border-purple-500/30 text-xs font-bold hover:bg-purple-950 hover:text-white transition-all cursor-pointer text-center">
-                <span>View Architecture Details</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-              </button>
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1.5 pt-1 text-[10px] font-mono text-purple-300">
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">Amenity Booking</span>
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">Complaint Tickets</span>
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">Resident Notices</span>
             </div>
           </div>
 
-          <div class="lg:col-span-6 bg-[#0c071e]/80 p-4 sm:p-8 md:p-10 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-purple-500/20">
-            <div class="w-full rounded-2xl bg-[#140d31] border border-purple-500/30 p-4 sm:p-5 space-y-3.5 shadow-xl">
-              <div class="flex justify-between items-center text-xs text-purple-300 border-b border-purple-500/20 pb-2.5">
-                <div class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
-                  <span class="font-mono text-[10px] sm:text-[11px] text-purple-200 font-semibold">society-management.live</span>
-                </div>
-                <span class="text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded font-mono font-bold text-[9px] sm:text-[10px]">Production</span>
-              </div>
-
-              <div class="grid grid-cols-3 gap-1.5 sm:gap-2.5 text-center">
-                <div class="p-2 sm:p-3 bg-[#0c071e] rounded-xl border border-purple-500/20">
-                  <div class="text-[9px] sm:text-[10px] text-purple-400 font-medium">Custom</div>
-                  <div class="text-xs sm:text-sm font-extrabold text-white mt-0.5">Any Apartment</div>
-                </div>
-                <div class="p-2 sm:p-3 bg-[#0c071e] rounded-xl border border-purple-500/20">
-                  <div class="text-[9px] sm:text-[10px] text-purple-400 font-medium">Bookings</div>
-                  <div class="text-xs sm:text-sm font-extrabold text-amber-400 mt-0.5">Automated</div>
-                </div>
-                <div class="p-2 sm:p-3 bg-[#0c071e] rounded-xl border border-purple-500/20">
-                  <div class="text-[9px] sm:text-[10px] text-purple-400 font-medium">Resolution</div>
-                  <div class="text-xs sm:text-sm font-extrabold text-emerald-400 mt-0.5">Zero Paper</div>
-                </div>
-              </div>
-
-              <div class="p-3 sm:p-3.5 bg-[#0c071e] rounded-xl border border-purple-500/20 text-xs text-purple-200 space-y-1.5 sm:space-y-2">
-                <div class="flex items-center justify-between text-[9px] sm:text-[10px] text-purple-400 font-mono">
-                  <span>Community Operations Feed</span>
-                  <span class="text-emerald-400 font-bold">Synchronized</span>
-                </div>
-                <p class="text-[10px] sm:text-[11px] leading-relaxed text-purple-200/90">
-                  Automated resident noticeboards, slot booking engine, and maintenance requests unified in one scalable dashboard.
-                </p>
-              </div>
-
-              <div class="pt-1 text-center">
-                <a href="https://vascon-venus-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-[10px] sm:text-[11px] text-amber-400 hover:text-amber-300 font-bold underline inline-flex items-center gap-1">
-                  <span>Click here to explore the live interactive society demo</span>
-                  <i data-lucide="external-link" class="w-3 h-3"></i>
-                </a>
-              </div>
-            </div>
+          <!-- Actions -->
+          <div class="pt-4 border-t border-purple-500/20 flex flex-wrap items-center gap-2.5">
+            <a href="https://vascon-venus-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-xs font-black hover:from-amber-300 hover:to-amber-400 transition-all shadow-md text-center">
+              <span>Launch Live Demo</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+            <button onclick="openProjectModal('apartment-solution')" class="px-4 py-2.5 rounded-xl bg-[#0c071e] text-purple-200 border border-purple-500/30 text-xs font-bold hover:bg-purple-950 hover:text-white transition-all cursor-pointer">
+              <span>Details</span>
+            </button>
           </div>
         </div>
 
-        <!-- ITEM 02: Restaurant KPI & Operations Platform (iOS & Android) -->
-        <div class="rounded-2xl sm:rounded-3xl bg-[#140d31]/80 border border-purple-500/30 overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-2xl">
-          <div class="lg:col-span-6 p-5 sm:p-8 md:p-11 flex flex-col justify-between space-y-5 sm:space-y-6">
-            <div class="space-y-3 sm:space-y-4">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400">iOS & Android App / Analytics</span>
-                <span class="text-purple-600">•</span>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
-                  Live Production App
-                </span>
+        <!-- CATALOG ITEM 02: Restaurant KPI & Operations Platform -->
+        <div class="catalog-project-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400">iOS & Android App</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                Live App
+              </span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">
+              Restaurant KPI & Analytics App
+            </h3>
+
+            <p class="text-purple-200/90 text-xs sm:text-sm leading-relaxed">
+              Mobile and web telemetry suite built for restaurant owners to monitor revenue velocity, table turnover, and kitchen margins.
+            </p>
+
+            <!-- Scaled UI Thumbnail -->
+            <div class="rounded-xl bg-[#0c071e] border border-purple-500/30 p-3.5 space-y-2.5">
+              <div class="flex justify-between items-center text-[10px] text-purple-300 border-b border-purple-500/20 pb-2">
+                <span class="font-mono text-purple-200 font-semibold">restaurant-analytics.live</span>
+                <span class="text-amber-300 font-mono font-bold">iOS / Android</span>
               </div>
-              
-              <h3 class="text-xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
-                Restaurant KPI & Operations Platform
-              </h3>
-              
-              <p class="text-purple-200/90 text-xs sm:text-sm leading-relaxed">
-                A high-performance mobile and web operating dashboard built for restaurant owners to monitor daily revenue, table turnover, inventory margins, and operational performance in real time.
-              </p>
-              
-              <div class="space-y-2 sm:space-y-2.5 pt-1 sm:pt-2 text-xs text-purple-200/90 font-medium">
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Cross-platform mobile experience (iOS & Android) with live telemetry sync</span></div>
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Real-time revenue tracking, average order value & peak hour sales analytics</span></div>
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Inventory margin monitoring and wastage cost control indicators</span></div>
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Table turnaround speed and staff shift efficiency metrics</span></div>
+              <div class="grid grid-cols-3 gap-1.5 text-center">
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Sales</div>
+                  <div class="text-xs font-extrabold text-white mt-0.5">₹1.84L Rev</div>
+                </div>
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Turnover</div>
+                  <div class="text-xs font-extrabold text-amber-400 mt-0.5">18m Avg</div>
+                </div>
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Margins</div>
+                  <div class="text-xs font-extrabold text-emerald-400 mt-0.5">68.4% Net</div>
+                </div>
               </div>
             </div>
 
-            <div class="pt-4 sm:pt-6 border-t border-purple-500/20 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <a href="https://restaurantkpi.ai.studio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-xs font-black hover:from-amber-300 hover:to-amber-400 transition-all shadow-lg shadow-amber-500/20 text-center">
-                <span>View Live App Demo</span>
-                <i data-lucide="external-link" class="w-4 h-4"></i>
-              </a>
-
-              <button onclick="openProjectModal('restaurant-kpi')" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#0c071e] text-purple-200 border border-purple-500/30 text-xs font-bold hover:bg-purple-950 hover:text-white transition-all cursor-pointer text-center">
-                <span>View Architecture Details</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-              </button>
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1.5 pt-1 text-[10px] font-mono text-purple-300">
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">Live POS Telemetry</span>
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">Wastage Alerts</span>
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">Multi-Outlet</span>
             </div>
           </div>
 
-          <div class="lg:col-span-6 bg-[#0c071e]/80 p-4 sm:p-8 md:p-10 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-purple-500/20">
-            <div class="w-full rounded-2xl bg-[#140d31] border border-purple-500/30 p-4 sm:p-5 space-y-3.5 shadow-xl">
-              <div class="flex justify-between items-center text-xs text-purple-300 border-b border-purple-500/20 pb-2.5">
-                <div class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
-                  <span class="font-mono text-[10px] sm:text-[11px] text-purple-200 font-semibold">restaurant-analytics.live</span>
-                </div>
-                <span class="text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded font-mono font-bold text-[9px] sm:text-[10px]">iOS / Android</span>
-              </div>
-
-              <div class="grid grid-cols-3 gap-1.5 sm:gap-2.5 text-center">
-                <div class="p-2 sm:p-3 bg-[#0c071e] rounded-xl border border-purple-500/20">
-                  <div class="text-[9px] sm:text-[10px] text-purple-400 font-medium">Daily Sales</div>
-                  <div class="text-xs sm:text-sm font-extrabold text-white mt-0.5">₹1.84L Rev</div>
-                </div>
-                <div class="p-2 sm:p-3 bg-[#0c071e] rounded-xl border border-purple-500/20">
-                  <div class="text-[9px] sm:text-[10px] text-purple-400 font-medium">Table Turn</div>
-                  <div class="text-xs sm:text-sm font-extrabold text-amber-400 mt-0.5">18m Avg</div>
-                </div>
-                <div class="p-2 sm:p-3 bg-[#0c071e] rounded-xl border border-purple-500/20">
-                  <div class="text-[9px] sm:text-[10px] text-purple-400 font-medium">Live Margins</div>
-                  <div class="text-xs sm:text-sm font-extrabold text-emerald-400 mt-0.5">68.4% Net</div>
-                </div>
-              </div>
-
-              <div class="p-3 sm:p-3.5 bg-[#0c071e] rounded-xl border border-purple-500/20 text-xs text-purple-200 space-y-1.5 sm:space-y-2">
-                <div class="flex items-center justify-between text-[9px] sm:text-[10px] text-purple-400 font-mono">
-                  <span>Executive F&B Dashboard</span>
-                  <span class="text-emerald-400 font-bold">Realtime Telemetry</span>
-                </div>
-                <p class="text-[10px] sm:text-[11px] leading-relaxed text-purple-200/90">
-                  Daily revenue velocity, kitchen inventory cost variance, and staff shift metrics unified across iOS and Android devices.
-                </p>
-              </div>
-
-              <div class="pt-1 text-center">
-                <a href="https://restaurantkpi.ai.studio/" target="_blank" rel="noopener noreferrer" class="text-[10px] sm:text-[11px] text-amber-400 hover:text-amber-300 font-bold underline inline-flex items-center gap-1">
-                  <span>Click here to explore the live interactive restaurant demo</span>
-                  <i data-lucide="external-link" class="w-3 h-3"></i>
-                </a>
-              </div>
-            </div>
+          <!-- Actions -->
+          <div class="pt-4 border-t border-purple-500/20 flex flex-wrap items-center gap-2.5">
+            <a href="https://restaurantkpi.ai.studio/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-xs font-black hover:from-amber-300 hover:to-amber-400 transition-all shadow-md text-center">
+              <span>Launch Live App</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+            <button onclick="openProjectModal('restaurant-kpi')" class="px-4 py-2.5 rounded-xl bg-[#0c071e] text-purple-200 border border-purple-500/30 text-xs font-bold hover:bg-purple-950 hover:text-white transition-all cursor-pointer">
+              <span>Details</span>
+            </button>
           </div>
         </div>
 
-        <!-- ITEM 03: EduCare — LMS & Digital Academy Platform -->
-        <div class="rounded-2xl sm:rounded-3xl bg-[#140d31]/80 border border-purple-500/30 overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-2xl">
-          <div class="lg:col-span-6 p-5 sm:p-8 md:p-11 flex flex-col justify-between space-y-5 sm:space-y-6">
-            <div class="space-y-3 sm:space-y-4">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400">EdTech & Learning Management System</span>
-                <span class="text-purple-600">•</span>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
-                  Live Production Platform
-                </span>
+        <!-- CATALOG ITEM 03: EduCare — LMS & Digital Academy Platform -->
+        <div class="catalog-project-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400">EdTech & LMS</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                Live Platform
+              </span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">
+              EduCare — Learning Management System
+            </h3>
+
+            <p class="text-purple-200/90 text-xs sm:text-sm leading-relaxed">
+              Cloud learning management platform for educational academies, institutes, and corporate trainers with automated grading and student portals.
+            </p>
+
+            <!-- Scaled UI Thumbnail -->
+            <div class="rounded-xl bg-[#0c071e] border border-purple-500/30 p-3.5 space-y-2.5">
+              <div class="flex justify-between items-center text-[10px] text-purple-300 border-b border-purple-500/20 pb-2">
+                <span class="font-mono text-purple-200 font-semibold">educare-academy.live</span>
+                <span class="text-amber-300 font-mono font-bold">EdTech Suite</span>
               </div>
-              
-              <h3 class="text-xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
-                EduCare — LMS & Digital Academy Platform
-              </h3>
-              
-              <p class="text-purple-200/90 text-xs sm:text-sm leading-relaxed">
-                A modern, scalable digital learning management platform engineered for educational institutions, coaching academies, and training programs to manage courses, student enrollment, live classes, and assessments seamlessly.
-              </p>
-              
-              <div class="space-y-2 sm:space-y-2.5 pt-1 sm:pt-2 text-xs text-purple-200/90 font-medium">
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Course curriculum & multimedia lecture module with student progress tracking</span></div>
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Live class scheduling, attendance tracking & automated reminder alerts</span></div>
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Interactive quizzes, assignment submissions & automated grading gradebook</span></div>
-                <div class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0"></div><span>Secure student, instructor & administrative role-based portals</span></div>
+              <div class="grid grid-cols-3 gap-1.5 text-center">
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Students</div>
+                  <div class="text-xs font-extrabold text-white mt-0.5">1,240+ Cohort</div>
+                </div>
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Completion</div>
+                  <div class="text-xs font-extrabold text-amber-400 mt-0.5">94.2% Rate</div>
+                </div>
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Grading</div>
+                  <div class="text-xs font-extrabold text-emerald-400 mt-0.5">Automated</div>
+                </div>
               </div>
             </div>
 
-            <div class="pt-4 sm:pt-6 border-t border-purple-500/20 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <a href="https://educare-hazel.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-xs font-black hover:from-amber-300 hover:to-amber-400 transition-all shadow-lg shadow-amber-500/20 text-center">
-                <span>View Live LMS Demo</span>
-                <i data-lucide="external-link" class="w-4 h-4"></i>
-              </a>
-
-              <button onclick="openProjectModal('educare-lms')" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#0c071e] text-purple-200 border border-purple-500/30 text-xs font-bold hover:bg-purple-950 hover:text-white transition-all cursor-pointer text-center">
-                <span>View Architecture Details</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-              </button>
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1.5 pt-1 text-[10px] font-mono text-purple-300">
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">Syllabus Engine</span>
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">Live Classes</span>
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">Student Portals</span>
             </div>
           </div>
 
-          <div class="lg:col-span-6 bg-[#0c071e]/80 p-4 sm:p-8 md:p-10 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-purple-500/20">
-            <div class="w-full rounded-2xl bg-[#140d31] border border-purple-500/30 p-4 sm:p-5 space-y-3.5 shadow-xl">
-              <div class="flex justify-between items-center text-xs text-purple-300 border-b border-purple-500/20 pb-2.5">
-                <div class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
-                  <span class="font-mono text-[10px] sm:text-[11px] text-purple-200 font-semibold">educare-academy.live</span>
-                </div>
-                <span class="text-amber-300 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded font-mono font-bold text-[9px] sm:text-[10px]">EdTech Portal</span>
-              </div>
+          <!-- Actions -->
+          <div class="pt-4 border-t border-purple-500/20 flex flex-wrap items-center gap-2.5">
+            <a href="https://educare-hazel.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-xs font-black hover:from-amber-300 hover:to-amber-400 transition-all shadow-md text-center">
+              <span>Launch Live LMS</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+            <button onclick="openProjectModal('educare-lms')" class="px-4 py-2.5 rounded-xl bg-[#0c071e] text-purple-200 border border-purple-500/30 text-xs font-bold hover:bg-purple-950 hover:text-white transition-all cursor-pointer">
+              <span>Details</span>
+            </button>
+          </div>
+        </div>
 
-              <div class="grid grid-cols-3 gap-1.5 sm:gap-2.5 text-center">
-                <div class="p-2 sm:p-3 bg-[#0c071e] rounded-xl border border-purple-500/20">
-                  <div class="text-[9px] sm:text-[10px] text-purple-400 font-medium">Enrollments</div>
-                  <div class="text-xs sm:text-sm font-extrabold text-white mt-0.5">1,240+ Active</div>
-                </div>
-                <div class="p-2 sm:p-3 bg-[#0c071e] rounded-xl border border-purple-500/20">
-                  <div class="text-[9px] sm:text-[10px] text-purple-400 font-medium">Completion</div>
-                  <div class="text-xs sm:text-sm font-extrabold text-amber-400 mt-0.5">94.2% Rate</div>
-                </div>
-                <div class="p-2 sm:p-3 bg-[#0c071e] rounded-xl border border-purple-500/20">
-                  <div class="text-[9px] sm:text-[10px] text-purple-400 font-medium">Assessments</div>
-                  <div class="text-xs sm:text-sm font-extrabold text-emerald-400 mt-0.5">Automated</div>
-                </div>
-              </div>
+        <!-- CATALOG ITEM 04: Executive Digital Profile & Portfolio Platform (New Addition) -->
+        <div class="catalog-project-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col justify-between space-y-5">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400">Personal Brand & Authority</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                Live Showcase
+              </span>
+            </div>
 
-              <div class="p-3 sm:p-3.5 bg-[#0c071e] rounded-xl border border-purple-500/20 text-xs text-purple-200 space-y-1.5 sm:space-y-2">
-                <div class="flex items-center justify-between text-[9px] sm:text-[10px] text-purple-400 font-mono">
-                  <span>Academic Operations Feed</span>
-                  <span class="text-emerald-400 font-bold">Synchronized</span>
-                </div>
-                <p class="text-[10px] sm:text-[11px] leading-relaxed text-purple-200/90">
-                  Automated lecture schedules, assignment grading queues, and student performance telemetry unified across web and mobile browsers.
-                </p>
-              </div>
+            <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">
+              Executive Digital Profile & Portfolio
+            </h3>
 
-              <div class="pt-1 text-center">
-                <a href="https://educare-hazel.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-[10px] sm:text-[11px] text-amber-400 hover:text-amber-300 font-bold underline inline-flex items-center gap-1">
-                  <span>Click here to explore the live interactive LMS demo</span>
-                  <i data-lucide="external-link" class="w-3 h-3"></i>
-                </a>
+            <p class="text-purple-200/90 text-xs sm:text-sm leading-relaxed">
+              A high-impact personal digital identity platform engineered for independent technology leaders, executives, and consultants to convert prospects.
+            </p>
+
+            <!-- Scaled UI Thumbnail -->
+            <div class="rounded-xl bg-[#0c071e] border border-purple-500/30 p-3.5 space-y-2.5">
+              <div class="flex justify-between items-center text-[10px] text-purple-300 border-b border-purple-500/20 pb-2">
+                <span class="font-mono text-purple-200 font-semibold">edwinpaul-profile.live</span>
+                <span class="text-amber-300 font-mono font-bold">Personal Brand</span>
+              </div>
+              <div class="grid grid-cols-3 gap-1.5 text-center">
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Speed</div>
+                  <div class="text-xs font-extrabold text-white mt-0.5">100/100</div>
+                </div>
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Card Pass</div>
+                  <div class="text-xs font-extrabold text-amber-400 mt-0.5">Instant QR</div>
+                </div>
+                <div class="p-2 bg-[#140d31] rounded-lg border border-purple-500/20">
+                  <div class="text-[9px] text-purple-400">Conversion</div>
+                  <div class="text-xs font-extrabold text-emerald-400 mt-0.5">Direct WA</div>
+                </div>
               </div>
             </div>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1.5 pt-1 text-[10px] font-mono text-purple-300">
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">Authority Identity</span>
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">QR Digital Card</span>
+              <span class="bg-[#0c071e] px-2.5 py-1 rounded-md border border-purple-500/20">Client Intake</span>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="pt-4 border-t border-purple-500/20 flex flex-wrap items-center gap-2.5">
+            <a href="https://www.edwin-paul.com/#home" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 text-xs font-black hover:from-amber-300 hover:to-amber-400 transition-all shadow-md text-center">
+              <span>View Live Portfolio</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+            <button onclick="openProjectModal('executive-portfolio')" class="px-4 py-2.5 rounded-xl bg-[#0c071e] text-purple-200 border border-purple-500/30 text-xs font-bold hover:bg-purple-950 hover:text-white transition-all cursor-pointer">
+              <span>Details</span>
+            </button>
           </div>
         </div>
 
@@ -1457,7 +1454,7 @@
       defaultWhatsAppMessage: "Hi Edwin & Swathy, I am reaching out through the Ezrah Innovations website to discuss a digital solution for my business."
     };
 
-    // Featured Solutions
+    // Featured Solutions (Catalog Index)
     const PROJECTS = {
       'apartment-solution': {
         name: 'Apartment & Society Management Solution',
@@ -1497,11 +1494,26 @@
         problem: 'Educational institutions struggle with fragmented video links, unorganized assignment submissions over email, manual attendance sheets, and delayed assessment feedback.',
         solution: 'A centralized cloud LMS delivering structured course roadmaps, multimedia content delivery, automated attendance tracking, online assessments, and comprehensive student analytics.',
         features: [
-          'Course curriculum & multimedia lecture module with student progress tracking',
-          'Live class scheduling, attendance tracking & automated reminder alerts',
-          'Interactive quizzes, assignment submissions & automated grading gradebook',
-          'Secure student, instructor & administrative role-based portals',
+          'Modular course & syllabus builder with multimedia video lectures and notes',
+          'Interactive quiz & assignment engine with automated evaluation and gradebook',
+          'Student, teacher, and administrative role hierarchies with privacy controls',
+          'Live class scheduling and automated reminder notifications via email and WhatsApp',
           'Comprehensive student learning analytics and progress completion tracking'
+        ]
+      },
+      'executive-portfolio': {
+        name: 'Executive Digital Profile & Portfolio Platform',
+        category: 'Personal Brand & Authority Platform',
+        liveUrl: 'https://www.edwin-paul.com/#home',
+        desc: 'A modern, high-conversion personal digital identity platform engineered for independent technology leaders, executives, and consultants to turn traffic into qualified client conversations.',
+        problem: 'Traditional paper business cards and generic PDF resumes get lost, fail to demonstrate live technical capability, and provide zero instant client conversion hooks.',
+        solution: 'A high-speed, mobile-first personal digital identity platform equipped with interactive project showcases, direct WhatsApp dispatch, and verified credibility telemetry.',
+        features: [
+          'Sub-second mobile loading speed optimized for WhatsApp & LinkedIn referrals',
+          'Integrated QR code pass for instant in-person executive contact exchange',
+          'Dynamic client inquiry routing with pre-filled WhatsApp action triggers',
+          'Curated project showcase architecture with live interactive demo launchers',
+          'Clean typography and modern SaaS visual hierarchy establishing instant authority'
         ]
       }
     };
@@ -1640,3 +1652,4 @@
   </script>
 </body>
 </html>
+
